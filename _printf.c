@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	char *temp;
 	int i = 0, num, count = 0;
+	unsigned long int num2;
 
 	if (format == NULL)
 		return (-1);
@@ -47,8 +48,8 @@ int _printf(const char *format, ...)
 					count += print_number(num);
 				break;
 			case 'b':
-				num = va_arg(ap, int);
-				count += int_to_bin(num);
+				num2 = va_arg(ap, unsigned long int);
+				count += int_to_bin(num2);
 				break;
 			default:
 				count += _putchar(format[--i]);
