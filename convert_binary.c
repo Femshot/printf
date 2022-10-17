@@ -5,7 +5,7 @@
  * Returns: the length of base 2 number converted to
  */
 
-int int_to_bin(int nu)
+int int_to_bin(unsigned long int nu)
 {
 	int l = 0, rem, mon = 1;
 	unsigned long int bin = 0; 
