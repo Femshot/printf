@@ -7,8 +7,8 @@
 
 int int_to_bin(int nu)
 {
-	int l = 0, rem, bin = 0, mon = 1;
-
+	int l = 0, rem, mon = 1;
+	unsigned long int bin = 0; 
 	if (nu == 0)
 		l += _putchar(nu);
 	if (nu > 0)
@@ -17,10 +17,10 @@ int int_to_bin(int nu)
 	{
 		rem = nu % 2;
 		nu /= 2;
-		bin += rem * mon;
+		bin += ((unsigned long int) rem * mon);
 		mon *= 10;
 	}
-		l += print_number(bin);
+		l += print_number((int) bin);
 	}
 	return (l);
 }
