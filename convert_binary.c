@@ -5,10 +5,10 @@
  * Returns: the length of base 2 number converted to
  */
 
-int int_to_bin(unsigned long int nu)
+int int_to_bin(unsigned int nu)
 {
-	int l = 0, rem, mon = 1;
-	unsigned long int bin = 0; 
+	unsigned int l = 0, rem, mon = 1;
+	unsigned int bin = 0; 
 	if (nu == 0)
 		l += _putchar(nu);
 	if (nu > 0)
@@ -17,10 +17,10 @@ int int_to_bin(unsigned long int nu)
 	{
 		rem = nu % 2;
 		nu /= 2;
-		bin += ((unsigned long int) rem * mon);
+		bin += rem * mon;
 		mon *= 10;
 	}
-		l += print_number((int) bin);
+		l += print_number(bin);
 	}
 	return (l);
 }
