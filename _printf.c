@@ -33,6 +33,8 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				temp = va_arg(ap, char*);
+				if (temp == NULL)
+					temp = "(null)";
 				while (*temp)
 					count += _putchar(*temp++);
 				break;
