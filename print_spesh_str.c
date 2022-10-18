@@ -23,7 +23,7 @@ int print_S(char *S)
 			_putchar('\\');
 			_putchar('x');
 			counter += 2;
-			if (str[i] > 0 || str[i] <= 15)
+			if (str[i] > 0 && str[i] <= 15)
 			{
 				counter += _putchar('0');
 				counter += print_X((unsigned long int) str[i]);
