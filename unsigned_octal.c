@@ -29,4 +29,3 @@ int print_o(unsigned int o)
 	}
 	return (counter);
 }
-

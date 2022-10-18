@@ -36,4 +36,3 @@ int print_x(unsigned int x)
 	}
 	return (counter);
 }
-

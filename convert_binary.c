@@ -1,6 +1,7 @@
 #include "main.h"
 
-/*int_to_bin - converts a base 10/decimal number to base 2 binary
+/**
+ * int_to_bin - converts a base 10/decimal number to base 2 binary
  * @nu: Base 10 number to be converted
  * Returns: the length of base 2 number converted to
  */
@@ -29,4 +30,3 @@ int int_to_bin(unsigned int nu)
 	}
 	return (counter);
 }
-
