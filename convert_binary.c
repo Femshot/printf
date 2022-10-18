@@ -7,20 +7,26 @@
 
 int int_to_bin(unsigned int nu)
 {
-	unsigned int l = 0, rem, mon = 1;
-	unsigned int bin = 0; 
-	if (nu == 0)
-		l += _putchar(nu);
-	if (nu > 0)
+	unsigned int m = 2147483648, j = 1, sum = 0;
+	unsigned int a[32];
+	int counter = 0;
+
+	a[0] = nu / m;
+
+	for (; j < 32; j++)
 	{
-		while (nu != 0)
+		m /= 2;
+		a[j] = (nu / m) % 2;
+	}
+	for (j = 0; j < 32; j++)
 	{
-		rem = nu % 2;
-		nu /= 2;
-		bin += rem * mon;
-		mon *= 10;
+		sum += a[j];
+		if (sum || j == 31)
+		{
+			_putchar('0' + a[j]);
+			counter++;
+		}
 	}
-		l += print_number(bin);
-	}
-	return (l);
+	return (counter);
 }
+
