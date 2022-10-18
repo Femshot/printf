@@ -7,15 +7,16 @@
  * _printf - A function that prints to stdout like printf.
  * @format: A string with maybe or not include various arguments passed to the
  * function.
- * Return: length of format string
+ * Return: length of displayed characters
  */
 
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	char *temp, *temp2;
+	char *temp, *temp2, *temp3, *temp4;
 	int i = 0, num, numz, count = 0;
 	unsigned int num2, num3, num4, num5, num6;
+	unsigned long num7;
 
 	if (format == NULL)
 		return (-1);
@@ -33,7 +34,7 @@ int _printf(const char *format, ...)
 				count += _putchar('%');
 				break;
 			case 's':
-				temp = va_arg(ap, char*);
+				temp = va_arg(ap, char *);
 				if (temp == NULL)
 					temp = "(null)";
 				while (*temp)
@@ -68,8 +69,20 @@ int _printf(const char *format, ...)
 				count += print_X(num3);
 				break;
 			case 'S':
-				temp2 = va_arg(ap, char*);
+				temp2 = va_arg(ap, char *);
 				count += print_S(temp2);
+				break;
+			case 'r':
+				temp3 = va_arg(ap, char *);
+				count += print_r(temp3);
+				break;
+			case 'p':
+				num7 = va_arg(ap, unsigned long);
+				count += print_p(num7);
+				break;
+			case 'R':
+				temp4 = va_arg(ap, char *);
+				count += print_R(temp4);
 				break;
 			default:
 				count += _putchar(format[--i]);
@@ -84,4 +97,3 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
-

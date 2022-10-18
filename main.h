@@ -10,5 +10,8 @@ int print_x(unsigned int x);
 int print_o(unsigned int o);
 int print_X(unsigned int X);
 int print_S(char *S);
+int print_r(char *r);
+int print_p(unsigned long p);
+int print_R(char *R);
 
 #endif
