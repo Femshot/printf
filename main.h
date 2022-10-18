@@ -8,5 +8,6 @@ int int_to_bin(unsigned int nu);
 int print_u(unsigned int u);
 int print_x(unsigned int x);
 int print_o(unsigned int o);
+int print_X(unsigned int X);
 
 #endif
