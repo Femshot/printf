@@ -58,15 +58,8 @@ int _printf(const char *format, ...)
 			++i;
 			continue;
 		}
-	
-		if (format[i] == '%' && format[++i] == ' ')
-			return (-1);
-
-		else
-		{
-			count += _putchar(format[i]);
-			i++;
-		}
+		count += _putchar(format[i]);
+		i++;
 	}
 	va_end(ap);
 	return (count);
