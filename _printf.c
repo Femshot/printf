@@ -13,9 +13,9 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	char *temp;
-	int i = 0, num, count = 0;
-	unsigned int num2;
+	char *temp, *temp2;
+	int i = 0, num, numz, count = 0;
+	unsigned int num2, num3, num4, num5, num6;
 
 	if (format == NULL)
 		return (-1);
@@ -40,8 +40,8 @@ int _printf(const char *format, ...)
 					count += _putchar(*temp++);
 				break;
 			case 'd':
-				num = va_arg(ap, int);
-					count += print_number(num);
+				numz = va_arg(ap, int);
+					count += print_number(numz);
 				break;
 			case 'i':
 				num = va_arg(ap, int);
@@ -50,6 +50,26 @@ int _printf(const char *format, ...)
 			case 'b':
 				num2 = va_arg(ap, unsigned int);
 				count += int_to_bin(num2);
+				break;
+			case 'u':
+				num6 = va_arg(ap, unsigned int);
+				count += print_u(num6);
+				break;
+			case 'x':
+				num4 = va_arg(ap, unsigned int);
+				count += print_x(num4);
+				break;
+			case 'o':
+				num5 = va_arg(ap, unsigned int);
+				count += print_o(num5);
+				break;
+			case 'X':
+				num3 = va_arg(ap, unsigned int);
+				count += print_X(num3);
+				break;
+			case 'S':
+				temp2 = va_arg(ap, char*);
+				count += print_S(temp2);
 				break;
 			default:
 				count += _putchar(format[--i]);
@@ -64,3 +84,4 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
+
