@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%' && format[++i] != ' ')
+		if (format[i] == '%' && format[i + 1] != ' ')
 		{
 			switch (format[++i])
 			{
@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 				count += int_to_bin(num2);
 				break;
 			default:
-				return (-1);
+				count += _putchar(format[--i]);
 				break;
 			}
 			++i;
